@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keya Upadhyay | Mechanical Engineer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #D1C4E9;
+            --olive: #556B2F;
+            --dark-olive: #3D4D21;
+            --grey-bg: #F8F9FA;
+            --text: #333333;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background-color: var(--grey-bg); line-height: 1.6; }
+
+        /* Navigation */
+        nav { background: var(--white); padding: 1.2rem 10%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; color: var(--olive); text-decoration: none; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--olive); }
+
+        /* Hero */
+        header { height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; background: linear-gradient(135deg, #fff 50%, var(--purple) 100%); margin-top: 60px; }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: var(--text); }
+        h1 span { color: var(--olive); }
+        .subtitle { font-size: 1.2rem; margin: 1rem 0 2rem; color: #666; max-width: 600px; }
+
+        /* Sections */
+        section { padding: 80px 10%; }
+        h2 { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--olive); margin-bottom: 30px; border-bottom: 4px solid var(--purple); display: inline-block; }
+
+        /* Experience & Education Cards */
+        .card { background: var(--white); padding: 25px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid var(--olive); shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .card h3 { margin-bottom: 5px; color: #222; }
+        .date { color: var(--olive); font-weight: 600; display: block; margin-bottom: 10px; }
+
+        /* Contact Form */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        form { display: flex; flex-direction: column; }
+        input, textarea { padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+        .btn { background: var(--olive); color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; transition: 0.3s; width: fit-content; text-decoration: none; }
+        .btn:hover { background: var(--dark-olive); }
+
+        footer { text-align: center; padding: 40px; background: #333; color: white; margin-top: 50px; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .contact-container { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">KEYA UPADHYAY</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Mechanical <br><span>Engineer</span></h1>
+        <p class="subtitle">Focusing on structural integrity, thermodynamics, and sustainable design solutions for modern industry.</p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a Mechanical Engineer dedicated to precision and efficiency. I specialize in designing mechanical systems that bridge the gap between complex theoretical concepts and practical, manufactured reality. My technical toolkit includes CAD modeling, thermal analysis, and project management.</p>
+    </section>
+
+    <section id="education" style="background: white;">
+        <h2>Education</h2>
+        <div class="card">
+            <span class="date">2018 - 2022</span>
+            <h3>Bachelor of Science in Mechanical Engineering</h3>
+            <p>University Name Placeholder • City, Country</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="card">
+            <span class="date">2022 - Present</span>
+            <h3>Mechanical Engineer (Placeholder)</h3>
+            <p>Company Name • Location</p>
+            <p>Designed and optimized mechanical components using SolidWorks. Reduced manufacturing waste by 10% through process redesign.</p>
+        </div>
+        <div class="card">
+            <span class="date">2021 - 2022</span>
+            <h3>Engineering Intern (Placeholder)</h3>
+            <p>Company Name • Location</p>
+            <p>Assisted in the assembly of hydraulic systems and maintained technical documentation for project audits.</p>
+        </div>
+    </section>
+
+    <section id="contact" style="background: white;">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div>
+                <p>Feel free to reach out for collaboration, project inquiries, or professional networking.</p><br>
+                <p><strong>Email:</strong> keya.upadhyay@email.com</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/keyaupadhyay</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Keya Upadhyay | Mechanical Engineering Portfolio</p>
+    </footer>
+
+</body>
+</html>
