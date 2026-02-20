@@ -4,270 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keya Upadhyay | Mechanical Engineer</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Modern Slate Grey Palette */
+        /* Color Palette */
         :root {
-            --bg-slate: #23272E;        /* Deep Slate Grey */
-            --bg-card: #2D323B;         /* Medium Slate for cards */
-            --olive-green: #8FA370;     /* Muted technical Olive */
-            --lavender: #BFAFF2;        /* Soft Purple accent */
-            --text-main: #ECEFF4;       /* Crisp white-grey text */
-            --text-dim: #AAB2C0;        /* Dimmed text for descriptions */
-            --border-color: #3E4451;    /* Subtle borders */
+            --olive: #556B2F;
+            --purple: #D1C4E9;
+            --dark-grey: #333333;
+            --light-grey: #F5F5F5;
+            --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-slate); 
-            color: var(--text-main);
-            line-height: 1.6;
-            scroll-behavior: smooth;
+        /* Essential Reset - Fixes the "Frozen" issue */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: auto; /* Allows the page to grow */
+            overflow-x: hidden; /* Prevents side-scrolling */
+            overflow-y: auto !important; /* Forces scrolling to work */
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--light-grey);
+            color: var(--dark-grey);
         }
 
         /* Navigation */
         nav {
-            background: rgba(35, 39, 46, 0.95);
-            padding: 1rem 10%;
+            background: var(--white);
+            padding: 20px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            width: 100%;
+            border-bottom: 3px solid var(--purple);
+            position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
+            z-index: 999;
         }
-        .logo { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 1.2rem; 
-            color: var(--olive-green); 
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--olive);
             text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 2rem; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--text-dim); 
-            font-size: 0.9rem;
-            transition: 0.3s;
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 600;
         }
-        .nav-links a:hover { color: var(--lavender); }
 
         /* Hero Section */
-        header {
-            height: 85vh;
+        .hero {
+            padding: 100px 10%;
+            background: linear-gradient(to right, var(--white), var(--purple));
+            text-align: left;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            color: var(--dark-grey);
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: var(--olive);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 80px 10%;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--olive);
+            margin-bottom: 40px;
+            border-left: 10px solid var(--purple);
+            padding-left: 20px;
+        }
+
+        /* Content Cards */
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--olive);
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-weight: bold;
+            color: var(--dark-grey);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Form */
+        form {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-            background: linear-gradient(135deg, var(--bg-slate) 40%, #2c263d 100%);
-            border-bottom: 1px solid var(--border-color);
-        }
-        h1 { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            line-height: 1.1;
-        }
-        h1 span { color: var(--olive-green); }
-        .tagline { 
-            font-size: 1.2rem; 
-            color: var(--text-dim); 
-            margin: 1.5rem 0; 
-            max-width: 600px; 
-        }
-
-        /* Sections */
-        section { padding: 100px 10%; }
-        h2 { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 1.8rem; 
-            color: var(--lavender); 
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: center;
-        }
-        h2::after {
-            content: '';
-            height: 1px;
-            flex-grow: 1;
-            background: var(--border-color);
-            margin-left: 20px;
-        }
-
-        /* Content Blocks */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-            position: relative;
-            transition: 0.3s;
-        }
-        .card:hover {
-            border-color: var(--olive-green);
-        }
-        .card h3 { color: var(--white); margin-bottom: 0.5rem; }
-        .date { 
-            color: var(--olive-green); 
-            font-weight: 600; 
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* Skills Tag Style */
-        .skills-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag {
-            background: rgba(143, 163, 112, 0.1);
-            color: var(--olive-green);
-            padding: 5px 12px;
-            border-radius: 3px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(143, 163, 112, 0.3);
-        }
-
-        /* Buttons & Forms */
-        .btn {
-            background: none;
-            color: var(--olive-green);
-            border: 2px solid var(--olive-green);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background: var(--olive-green);
-            color: var(--bg-slate);
+            max-width: 600px;
         }
 
         input, textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 1rem;
-            background: #1c2025;
-            border: 1px solid var(--border-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid var(--purple);
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .btn {
+            background-color: var(--olive);
             color: white;
-            border-radius: 4px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            width: fit-content;
         }
 
-        /* Footer */
+        .btn:hover {
+            background-color: var(--dark-grey);
+        }
+
         footer {
-            padding: 50px 10%;
-            background: #1c2025;
+            background: var(--dark-grey);
+            color: white;
+            padding: 40px 10%;
             text-align: center;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            border-top: 1px solid var(--border-color);
         }
 
-        /* Responsive */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
-            section { padding: 60px 5%; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Nav -->
     <nav>
         <a href="#" class="logo">KU.ENGINEERING</a>
-        <ul class="nav-links">
-            <li><a href="#about">01. About</a></li>
-            <li><a href="#education">02. Education</a></li>
-            <li><a href="#experience">03. Experience</a></li>
-            <li><a href="#contact">04. Contact</a></li>
-        </ul>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <header>
-        <p style="color: var(--lavender); font-family: monospace; margin-bottom: 10px;">Hello, my name is</p>
-        <h1>Keya <span>Upadhyay.</span></h1>
-        <p class="tagline">A Mechanical Engineer building high-precision systems and optimizing industrial workflows through advanced thermal and structural design.</p>
-        <a href="#contact" class="btn" style="margin-top: 20px;">Get In Touch</a>
+    <!-- Hero -->
+    <header class="hero">
+        <h1>Keya <br><span>Upadhyay</span></h1>
+        <p class="tagline">Mechanical Engineer specializing in thermal systems, precision CAD design, and innovative manufacturing solutions.</p>
+        <a href="#contact" class="btn">Work With Me</a>
     </header>
 
+    <!-- About -->
     <section id="about">
-        <div class="grid">
-            <div>
-                <h2>About Me</h2>
-                <p style="color: var(--text-dim);">I focus on the intersection of design and durability. With a background in mechanical systems, I specialize in translating complex engineering requirements into functional, manufactured reality. I am committed to lean manufacturing and sustainable prototyping.</p>
-            </div>
-            <div>
-                <h3 style="color: var(--text-main); margin-bottom: 1rem;">Technical Skills</h3>
-                <div class="skills-wrap">
-                    <span class="skill-tag">SolidWorks</span>
-                    <span class="skill-tag">AutoCAD</span>
-                    <span class="skill-tag">FEA Analysis</span>
-                    <span class="skill-tag">Thermodynamics</span>
-                    <span class="skill-tag">Python (NumPy)</span>
-                    <span class="skill-tag">MATLAB</span>
-                    <span class="skill-tag">CNC Programming</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
+        <h2>About Me</h2>
         <div class="card">
-            <span class="date">2018 — 2022</span>
-            <h3>Bachelor of Science in Mechanical Engineering</h3>
-            <p style="color: var(--text-dim);">University Name Placeholder • City, State</p>
-            <p style="margin-top: 15px; font-size: 0.9rem;">Specialization in Fluid Dynamics and Material Science.</p>
+            <p>I am a Mechanical Engineer dedicated to high-precision design and structural integrity. My expertise lies in taking complex engineering concepts and turning them into functional, reliable hardware. I thrive on solving physical problems with elegant, efficient solutions.</p>
         </div>
     </section>
 
+    <!-- Education -->
+    <section id="education" style="background-color: var(--white);">
+        <h2>Education</h2>
+        <div class="card" style="background-color: var(--light-grey);">
+            <span class="date">2018 - 2022</span>
+            <h3>Bachelor of Science in Mechanical Engineering</h3>
+            <p>University Name Placeholder | City, Country</p>
+        </div>
+    </section>
+
+    <!-- Experience -->
     <section id="experience">
         <h2>Experience</h2>
+        
         <div class="card">
-            <span class="date">2022 — Present</span>
-            <h3>Mechanical Design Engineer</h3>
-            <p style="color: var(--olive-green); margin-bottom: 10px;">Company Name Placeholder</p>
-            <ul style="color: var(--text-dim); padding-left: 20px; font-size: 0.95rem;">
-                <li>Lead design for thermal management modules in industrial systems.</li>
-                <li>Conduct structural analysis on load-bearing components using ANSYS.</li>
-                <li>Collaborate with assembly teams to troubleshoot manufacturing bottlenecks.</li>
-            </ul>
+            <span class="date">2022 - Present</span>
+            <h3>Mechanical Engineer</h3>
+            <p><strong>Company Name Placeholder</strong></p>
+            <p style="margin-top:10px;">• Lead design for fluid cooling systems.<br>• Managed FEA simulations for structural durability.<br>• Optimized production cycle by 15%.</p>
+        </div>
+
+        <div class="card">
+            <span class="date">2021 - 2022</span>
+            <h3>Engineering Intern</h3>
+            <p><strong>Internship Placeholder</strong></p>
+            <p style="margin-top:10px;">• Assisted in CAD drafting and prototyping using 3D printing techniques.</p>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="grid">
+    <!-- Contact -->
+    <section id="contact" style="background-color: var(--white);">
+        <h2>Contact</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 50px;">
             <div>
-                <h2>Contact</h2>
-                <p style="color: var(--text-dim); margin-bottom: 20px;">I am currently open to new opportunities and technical collaborations.</p>
                 <p><strong>Email:</strong> keya.upadhyay@email.com</p>
-                <p><strong>Location:</strong> City, Country</p>
+                <p><strong>LinkedIn:</strong> linkedin.com/in/keyaupadhyay</p>
+                <p style="margin-top: 20px;">I am always open to discussing new projects or opportunities.</p>
             </div>
             <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <textarea rows="5" placeholder="Your Message"></textarea>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="5" placeholder="Message" required></textarea>
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>Designed & Built by Keya Upadhyay &copy; 2024</p>
+        <p>&copy; 2024 Keya Upadhyay | Mechanical Engineering</p>
     </footer>
 
 </body>
