@@ -3,35 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keya Upadhyay | Mechanical Engineer Portfolio</title>
+    <title>Keya Upadhyay | Mechanical Engineer</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Dark Mode Color Palette */
+        /* Modern Slate Grey Palette */
         :root {
-            --bg-dark: #121212;         /* Deep Charcoal Background */
-            --bg-card: #1E1E1E;         /* Slightly lighter surface for cards */
-            --olive-accent: #A4B494;    /* Desaturated Olive Green */
-            --purple-accent: #B39DDB;   /* Muted Light Purple */
-            --text-primary: #E0E0E0;    /* Off-white text */
-            --text-secondary: #B0B0B0;  /* Muted grey text */
-            --nav-bg: #1A1A1A;          /* Navigation background */
+            --bg-slate: #23272E;        /* Deep Slate Grey */
+            --bg-card: #2D323B;         /* Medium Slate for cards */
+            --olive-green: #8FA370;     /* Muted technical Olive */
+            --lavender: #BFAFF2;        /* Soft Purple accent */
+            --text-main: #ECEFF4;       /* Crisp white-grey text */
+            --text-dim: #AAB2C0;        /* Dimmed text for descriptions */
+            --border-color: #3E4451;    /* Subtle borders */
         }
 
-        /* Basic Setup */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-dark); 
-            color: var(--text-primary);
+            background-color: var(--bg-slate); 
+            color: var(--text-main);
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
         /* Navigation */
         nav {
-            background: var(--nav-bg);
-            padding: 1.2rem 10%;
+            background: rgba(35, 39, 46, 0.95);
+            padding: 1rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,22 +38,237 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
         }
         .logo { 
             font-family: 'Montserrat', sans-serif; 
-            font-size: 1.5rem; 
-            color: var(--olive-accent); 
+            font-size: 1.2rem; 
+            color: var(--olive-green); 
             text-decoration: none;
-            letter-spacing: 1px;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 2rem; }
         .nav-links a { 
             text-decoration: none; 
-            color: var(--text-secondary); 
-            font-weight: 500; 
+            color: var(--text-dim); 
+            font-size: 0.9rem;
             transition: 0.3s;
         }
-        .nav-links a:hover { color: var(--p
+        .nav-links a:hover { color: var(--lavender); }
+
+        /* Hero Section */
+        header {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+            background: linear-gradient(135deg, var(--bg-slate) 40%, #2c263d 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+        h1 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            line-height: 1.1;
+        }
+        h1 span { color: var(--olive-green); }
+        .tagline { 
+            font-size: 1.2rem; 
+            color: var(--text-dim); 
+            margin: 1.5rem 0; 
+            max-width: 600px; 
+        }
+
+        /* Sections */
+        section { padding: 100px 10%; }
+        h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.8rem; 
+            color: var(--lavender); 
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+        h2::after {
+            content: '';
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border-color);
+            margin-left: 20px;
+        }
+
+        /* Content Blocks */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: var(--olive-green);
+        }
+        .card h3 { color: var(--white); margin-bottom: 0.5rem; }
+        .date { 
+            color: var(--olive-green); 
+            font-weight: 600; 
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Skills Tag Style */
+        .skills-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag {
+            background: rgba(143, 163, 112, 0.1);
+            color: var(--olive-green);
+            padding: 5px 12px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(143, 163, 112, 0.3);
+        }
+
+        /* Buttons & Forms */
+        .btn {
+            background: none;
+            color: var(--olive-green);
+            border: 2px solid var(--olive-green);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: var(--olive-green);
+            color: var(--bg-slate);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            background: #1c2025;
+            border: 1px solid var(--border-color);
+            color: white;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 10%;
+            background: #1c2025;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">KU.ENGINEERING</a>
+        <ul class="nav-links">
+            <li><a href="#about">01. About</a></li>
+            <li><a href="#education">02. Education</a></li>
+            <li><a href="#experience">03. Experience</a></li>
+            <li><a href="#contact">04. Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <p style="color: var(--lavender); font-family: monospace; margin-bottom: 10px;">Hello, my name is</p>
+        <h1>Keya <span>Upadhyay.</span></h1>
+        <p class="tagline">A Mechanical Engineer building high-precision systems and optimizing industrial workflows through advanced thermal and structural design.</p>
+        <a href="#contact" class="btn" style="margin-top: 20px;">Get In Touch</a>
+    </header>
+
+    <section id="about">
+        <div class="grid">
+            <div>
+                <h2>About Me</h2>
+                <p style="color: var(--text-dim);">I focus on the intersection of design and durability. With a background in mechanical systems, I specialize in translating complex engineering requirements into functional, manufactured reality. I am committed to lean manufacturing and sustainable prototyping.</p>
+            </div>
+            <div>
+                <h3 style="color: var(--text-main); margin-bottom: 1rem;">Technical Skills</h3>
+                <div class="skills-wrap">
+                    <span class="skill-tag">SolidWorks</span>
+                    <span class="skill-tag">AutoCAD</span>
+                    <span class="skill-tag">FEA Analysis</span>
+                    <span class="skill-tag">Thermodynamics</span>
+                    <span class="skill-tag">Python (NumPy)</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">CNC Programming</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="card">
+            <span class="date">2018 — 2022</span>
+            <h3>Bachelor of Science in Mechanical Engineering</h3>
+            <p style="color: var(--text-dim);">University Name Placeholder • City, State</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">Specialization in Fluid Dynamics and Material Science.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="card">
+            <span class="date">2022 — Present</span>
+            <h3>Mechanical Design Engineer</h3>
+            <p style="color: var(--olive-green); margin-bottom: 10px;">Company Name Placeholder</p>
+            <ul style="color: var(--text-dim); padding-left: 20px; font-size: 0.95rem;">
+                <li>Lead design for thermal management modules in industrial systems.</li>
+                <li>Conduct structural analysis on load-bearing components using ANSYS.</li>
+                <li>Collaborate with assembly teams to troubleshoot manufacturing bottlenecks.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="grid">
+            <div>
+                <h2>Contact</h2>
+                <p style="color: var(--text-dim); margin-bottom: 20px;">I am currently open to new opportunities and technical collaborations.</p>
+                <p><strong>Email:</strong> keya.upadhyay@email.com</p>
+                <p><strong>Location:</strong> City, Country</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Built by Keya Upadhyay &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
